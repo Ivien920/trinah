@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hey, Trinah! ❤️ A little something before Monday</title>
+  <meta name="description" content="A little good-luck surprise for Trinah before her UACE examinations.">
+  <meta name="theme-color" content="#0b0b2b">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Hey, Trinah! ❤️">
+  <meta property="og:description" content="Before you face those UACE papers, someone has a little something for you.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-locked">
+
+  <!-- Floating background particles (canvas, drawn by app.js) -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <!-- Full-screen confetti / hearts layer -->
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- ======================= 1. OPENING SURPRISE ======================= -->
+  <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+    <div class="welcome__inner">
+      <h1 id="welcome-title" class="welcome__title"><span class="grad">HEY, TRINAH!</span> <span class="emo">❤️</span></h1>
+      <p class="welcome__text">Before you face those UACE papers, someone has a little something for you.</p>
+
+      <div class="gift" id="gift" aria-hidden="true">
+        <div class="gift__glow"></div>
+        <div class="gift__lid">
+          <span class="gift__bow gift__bow--l"></span>
+          <span class="gift__bow gift__bow--r"></span>
+        </div>
+        <div class="gift__box"><span class="gift__ribbon"></span></div>
+        <span class="gift__spark gift__spark--1">✨</span>
+        <span class="gift__spark gift__spark--2">✨</span>
+        <span class="gift__spark gift__spark--3">💖</span>
+      </div>
+
+      <button type="button" id="open-btn" class="btn btn--gold">OPEN YOUR SURPRISE 🎁</button>
+    </div>
+  </section>
+
+  <!-- ======================= MAIN EXPERIENCE ======================= -->
+  <main id="experience" class="experience" hidden>
+
+    <header class="hero reveal">
+      <p class="eyebrow">For Kardash Trinah</p>
+      <h2 class="hero__title">Someone believes in you <span class="heart">❤️</span></h2>
+      <p class="hero__sub">Scroll slowly. Every part of this was made just for you.</p>
+      <span class="hero__arrow" aria-hidden="true">↓</span>
+    </header>
+
+    <!-- ======================= 2. PHOTO SLIDER ======================= -->
+    <section id="gallery" class="section reveal" aria-labelledby="gallery-title" hidden>
+      <h2 id="gallery-title" class="section__title"><span class="grad">A LITTLE GALLERY OF SOMEONE SPECIAL</span> <span class="emo">✨</span></h2>
+      <div class="carousel carousel--photos" id="photo-carousel" role="region" aria-roledescription="carousel" aria-label="Photo gallery" tabindex="0">
+        <div class="carousel__viewport"><div class="carousel__track"></div></div>
+        <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Previous photo">‹</button>
+        <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Next photo">›</button>
+        <div class="carousel__dots" role="group" aria-label="Choose a photo"></div>
+        <p class="sr-only" aria-live="polite" data-status></p>
+      </div>
+    </section>
+
+    <!-- ======================= 3. VIDEO SLIDER ======================= -->
+    <section id="videos" class="section reveal" aria-labelledby="videos-title" hidden>
+      <h2 id="videos-title" class="section__title"><span class="grad">MOMENTS WORTH SMILING ABOUT</span> <span class="emo">🎬</span></h2>
+      <div class="carousel carousel--videos" id="video-carousel" role="region" aria-roledescription="carousel" aria-label="Video gallery" tabindex="0">
+        <div class="carousel__viewport"><div class="carousel__track"></div></div>
+        <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Previous video">‹</button>
+        <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Next video">›</button>
+        <div class="carousel__dots" role="group" aria-label="Choose a video"></div>
+        <p class="sr-only" aria-live="polite" data-status></p>
+      </div>
+    </section>
+
+    <!-- ======================= 4. GOOD-LUCK MESSAGE ======================= -->
+    <section id="message" class="section reveal" aria-labelledby="message-title">
+      <article class="msg-card" id="msg-card" title="Tap to show the whole message">
+        <h2 id="message-title" class="msg-card__title">YOU’VE GOT THIS, TRINAH! 💪❤️</h2>
+        <div class="msg-card__body" id="msg-body"></div>
+        <button type="button" class="msg-card__skip" id="msg-skip">Show everything ⏩</button>
+      </article>
+    </section>
+
+    <!-- ======================= 5. SURVIVAL KIT ======================= -->
+    <section id="kit" class="section reveal" aria-labelledby="kit-title">
+      <h2 id="kit-title" class="section__title"><span class="grad">UACE SURVIVAL KIT</span> <span class="emo">😂</span></h2>
+      <p class="section__hint">Tap a card.</p>
+      <ul class="kit" id="kit-grid">
+        <li><button type="button" class="kit__card" aria-pressed="false">
+          <span class="kit__face kit__front"><span class="kit__icon" aria-hidden="true">🖊️</span><strong>Pen</strong><span>Your weapon of mass construction.</span></span>
+          <span class="kit__face kit__back" aria-hidden="true"><span>Ink: loaded.<br>Excuses: not included.</span></span>
+        </button></li>
+        <li><button type="button" class="kit__card" aria-pressed="false">
+          <span class="kit__face kit__front"><span class="kit__icon" aria-hidden="true">🧮</span><strong>Calculator</strong><span>Your mathematical best friend.</span></span>
+          <span class="kit__face kit__back" aria-hidden="true"><span>Check the batteries.<br>It has feelings too.</span></span>
+        </button></li>
+        <li><button type="button" class="kit__card" aria-pressed="false">
+          <span class="kit__face kit__front"><span class="kit__icon" aria-hidden="true">🧠</span><strong>Brain</strong><span>Please cooperate on Monday.</span></span>
+          <span class="kit__face kit__back" aria-hidden="true"><span>Everything you studied?<br>It’s all in there. Trust it.</span></span>
+        </button></li>
+        <li><button type="button" class="kit__card" aria-pressed="false">
+          <span class="kit__face kit__front"><span class="kit__icon" aria-hidden="true">😎</span><strong>Confidence</strong><span>100%.</span></span>
+          <span class="kit__face kit__back" aria-hidden="true"><span>Fully charged.<br>Do not unplug.</span></span>
+        </button></li>
+        <li><button type="button" class="kit__card" aria-pressed="false">
+          <span class="kit__face kit__front"><span class="kit__icon" aria-hidden="true">🚫</span><strong>Panic</strong><span>Not invited.</span></span>
+          <span class="kit__face kit__back" aria-hidden="true"><span>Security has been<br>notified at the door.</span></span>
+        </button></li>
+        <li><button type="button" class="kit__card" aria-pressed="false">
+          <span class="kit__face kit__front"><span class="kit__icon" aria-hidden="true">🧐</span><strong>Examiners</strong><span>Please be reasonable. 😂</span></span>
+          <span class="kit__face kit__back" aria-hidden="true"><span>Marking scheme:<br>be kind to Trinah.</span></span>
+        </button></li>
+      </ul>
+      <div class="center">
+        <button type="button" id="exam-btn" class="btn btn--pink">ACTIVATE EXAM MODE 🚀</button>
+      </div>
+      <p id="exam-msg" class="exam-msg" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- ======================= 6. COUNTDOWN ======================= -->
+    <section id="countdown" class="section reveal" aria-labelledby="count-title">
+      <h2 id="count-title" class="section__title"><span class="grad" id="count-title-text">MONDAY IS COMING</span> <span class="emo" id="count-title-emo">⏳</span></h2>
+      <div class="count" id="count-wrap">
+        <div class="count__grid" id="count-grid" role="timer" aria-live="off">
+          <div class="count__cell"><span class="count__num" id="cd-days">--</span><span class="count__lbl">Days</span></div>
+          <div class="count__cell"><span class="count__num" id="cd-hours">--</span><span class="count__lbl">Hours</span></div>
+          <div class="count__cell"><span class="count__num" id="cd-mins">--</span><span class="count__lbl">Minutes</span></div>
+          <div class="count__cell"><span class="count__num" id="cd-secs">--</span><span class="count__lbl">Seconds</span></div>
+        </div>
+        <p class="count__note" id="count-note"></p>
+        <p class="count__done" id="count-done" hidden>THE JOURNEY HAS BEGUN. GIVE IT YOUR BEST! ❤️</p>
+      </div>
+    </section>
+
+    <!-- ======================= 7. FINAL SURPRISE ======================= -->
+    <section id="final" class="section section--final reveal" aria-labelledby="final-title">
+      <h2 id="final-title" class="section__title"><span class="grad">ONE LAST THING…</span></h2>
+      <p class="final__text">No matter what happens, remember that your worth is bigger than any examination result. Give it your best, believe in yourself and make yourself proud.</p>
+      <button type="button" id="hug-btn" class="btn btn--gold">RECEIVE A VIRTUAL HUG 🤗</button>
+
+      <div class="hug" id="hug" hidden>
+        <div class="hug__emoji" aria-hidden="true">🤗</div>
+        <p class="hug__text">Sending you the warmest, tightest, most encouraging hug, straight to wherever you are. Hold on to it on Monday.</p>
+        <p class="hug__good" id="hug-good" role="status">GOOD LUCK, KARDASH TRINAH! ❤️</p>
+      </div>
+    </section>
+
+    <footer class="footer">Made with ❤️ just for you</footer>
+  </main>
+
+  <script src="assets/media.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
